@@ -73,7 +73,7 @@ func (p *ParkingLot) Depart(vehicle *Vehicle) {
     spotFound := false
     spotIndex := -1
     
-    // Buscar el vehículo en los espacios ocupados
+
     for i := 0; i < p.capacity; i++ {
         if p.vehicleIDs[i] == vehicle.ID {
             spotFound = true
