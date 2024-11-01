@@ -5,7 +5,6 @@ import (
 	"math/rand"
 	"simulator/internal/core/models"
 	"time"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
@@ -105,24 +104,8 @@ func CreateWindow(app fyne.App, parkingLot *models.ParkingLot, duration float64,
 
 
     go updateScreenAndTiker(texts, carImages, parkingLot)
-    // func() {
-    //     ticker := time.NewTicker(100 * time.Millisecond)
-    //     defer ticker.Stop()
-
-    //     for range ticker.C {
-    //         updateParkingDisplay(texts, carImages, parkingLot)
-    //     }
-    // }()
-
 
     go generateCars(totalCars, duration, parkingLot)
-    //func() {
-    //     for i := 1; i <= totalCars; i++ {
-    //         time.Sleep(time.Duration(rand.ExpFloat64() * duration) * time.Millisecond)
-    //         vehicle := &models.Vehicle{ID: i}
-    //         go parkingLot.Arrive(vehicle)
-    //     }
-    // }()
 
     return myWindow
 }

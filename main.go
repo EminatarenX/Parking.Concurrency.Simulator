@@ -3,7 +3,6 @@ package main
 import (
     "simulator/internal/core/models"
     "simulator/internal/ui"
-
     "fyne.io/fyne/v2/app"
 )
 
