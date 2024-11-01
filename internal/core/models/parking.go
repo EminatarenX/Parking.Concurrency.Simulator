@@ -48,13 +48,13 @@ func (p *ParkingLot) findNextAvailableSpot() int {
 func (p *ParkingLot) Arrive(vehicle *Vehicle) {
 	select {
     case <-p.availableSpots:
-        fmt.Printf("Vehículo %d entrando al estacionamiento.\n", vehicle.ID)
+      
         p.mutex.Lock()
         spotIndex := p.findNextAvailableSpot()
         if spotIndex != -1 {
             p.occupiedSpaces[spotIndex] = true
             p.vehicleIDs[spotIndex] = vehicle.ID
-            fmt.Printf("Vehículo %d asignado al espacio %d.\n", vehicle.ID, spotIndex+1)
+          
         }
         p.mutex.Unlock()
 
@@ -63,7 +63,6 @@ func (p *ParkingLot) Arrive(vehicle *Vehicle) {
         p.Depart(vehicle)
 
     default:
-        fmt.Printf("Vehículo %d esperando espacio en el estacionamiento.\n", vehicle.ID)
         p.queue <- vehicle
     }
 }
