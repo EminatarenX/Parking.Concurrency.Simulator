@@ -1,9 +1,9 @@
 package main
 
-import (
-    "simulator/internal/core/models"
-    "simulator/internal/ui"
-    "fyne.io/fyne/v2/app"
+import( 
+	"simulator/internal/core/models"
+	"simulator/internal/ui"
+	"fyne.io/fyne/v2/app"
 )
 
 func main() {
@@ -14,3 +14,5 @@ func main() {
 
     myApp.Run()
 }
+
+
